@@ -11,11 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20160130092355) do
+ActiveRecord::Schema.define(:version => 20160131005251) do
 
   create_table "user_groups", :force => true do |t|
     t.string   "code"
-    t.string   "address"
+    t.string   "address_line1"
+    t.string   "address_line2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zipcode"
     t.text     "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -27,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20160130092355) do
     t.string   "email"
     t.boolean  "is_attending"
     t.integer  "relationship"
+    t.integer  "user_group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -3,7 +3,11 @@
 <table>
   <tr>
     <th>Code</th>
-    <th>Address</th>
+    <th>Address line1</th>
+    <th>Address line2</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zipcode</th>
     <th>Notes</th>
     <th></th>
     <th></th>
@@ -13,7 +17,11 @@
 <% @user_groups.each do |user_group| %>
   <tr>
     <td><%= user_group.code %></td>
-    <td><%= user_group.address %></td>
+    <td><%= user_group.address_line1 %></td>
+    <td><%= user_group.address_line2 %></td>
+    <td><%= user_group.city %></td>
+    <td><%= user_group.state %></td>
+    <td><%= user_group.zipcode %></td>
     <td><%= user_group.notes %></td>
     <td><%= link_to 'Show', user_group %></td>
     <td><%= link_to 'Edit', edit_user_group_path(user_group) %></td>
