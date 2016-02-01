@@ -1,0 +1,9 @@
+<h1> Edit your RSVP for your party </h1>
+code: <%= @code %>
+<% @user_group.users.each do |user| %>
+  User:
+  <%= render '../users/form' :user => user %>
+<% end %>
+ddd
+yes no stuff here
+

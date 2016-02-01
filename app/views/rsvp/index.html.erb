@@ -1,3 +1,13 @@
-<h1> RSVP for your party </h1>
-code: <%= @code %>
-yes no stuff here
+<script src="https://fb.me/react-0.14.7.js"></script>
+<!-- The ReactDOM Library -->
+<script src="https://fb.me/react-dom-0.14.7.js"></script>
+<%= javascript_include_tag 'main' %>
+
+<h1> RSVP </h1>
+<%= form_tag("/rsvp/update", method: "post") do %>
+  <%= label_tag(:group_code, "Enter 4 character code:") %>
+  <%= text_field_tag(:group_code) %>
+  <%= submit_tag("Search by code") %>
+<% end %>
+
+<div id="example"></div>
