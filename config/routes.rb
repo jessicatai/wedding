@@ -7,7 +7,9 @@ Wedding::Application.routes.draw do
 
   get "home/registries"
 
-  match "rsvp/:code" => "rsvp#index"
+  get "rsvp" => "rsvp#index"
+
+  match "rsvp/:code" => "rsvp#update"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
