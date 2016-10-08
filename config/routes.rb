@@ -1,11 +1,15 @@
 Wedding::Application.routes.draw do
-  resources :user_groups
-
   resources :users
+
+  resources :user_groups
 
   get "home/index"
 
   get "home/registries"
+
+  get "rsvp" => "rsvp#index"
+
+  match "rsvp/:code" => "rsvp#update"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

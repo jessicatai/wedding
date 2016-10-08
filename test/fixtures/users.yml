@@ -5,11 +5,13 @@ one:
   last_name: MyString
   email: MyString
   is_attending: false
-  relationship: 
+  relationship: 1
+  user_group: 
 
 two:
   first_name: MyString
   last_name: MyString
   email: MyString
   is_attending: false
-  relationship: 
+  relationship: 1
+  user_group: 

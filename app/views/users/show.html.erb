@@ -25,6 +25,11 @@
   <%= @user.relationship %>
 </p>
 
+<p>
+  <b>User group:</b>
+  <%= @user.user_group %>
+</p>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

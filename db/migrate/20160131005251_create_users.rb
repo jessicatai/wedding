@@ -6,6 +6,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email
       t.boolean :is_attending
       t.integer :relationship
+      t.references :user_group
 
       t.timestamps
     end

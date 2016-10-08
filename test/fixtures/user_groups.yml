@@ -2,10 +2,18 @@
 
 one:
   code: MyString
-  address: MyString
+  address_line1: MyString
+  address_line2: MyString
+  city: MyString
+  state: MyString
+  zipcode: MyString
   notes: MyText
 
 two:
   code: MyString
-  address: MyString
+  address_line1: MyString
+  address_line2: MyString
+  city: MyString
+  state: MyString
+  zipcode: MyString
   notes: MyText
