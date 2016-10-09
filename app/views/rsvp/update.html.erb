@@ -1,9 +1,34 @@
 <h1> Edit your RSVP for your party </h1>
-code: <%= @code %>
-<% @user_group.users.each do |user| %>
-  User:
-  <%= user %>
-<% end %>
-ddd
-yes no stuff here
+code: <%= @user_group.code %>
+<%= form_for(@user_group) do |f| %>
+  <div class="field">
+    <%= f.label :address_line1 %><br />
+    <%= f.text_field :address_line1 %>
+  </div>
 
+  <% @user_group.users.each do |user| %>
+    User:
+    <%= user %>
+     <%= fields_for('users[]', user) do |u| %>
+      <div class="field">
+        <%= u.label :first_name %><br />
+        <%= u.text_field :first_name %>
+      </div>
+      <div class="field">
+        <%= u.label :last_name %><br />
+        <%= u.text_field :last_name %>
+      </div>
+      <div class="field">
+        <%= u.label :email %><br />
+        <%= u.text_field :email %>
+      </div>
+      <div class="field">
+        <%= u.label :is_attending %><br />
+        <%= u.check_box :is_attending %>
+      </div>
+    <% end %>
+  <% end %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

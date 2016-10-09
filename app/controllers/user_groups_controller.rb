@@ -55,16 +55,35 @@ class UserGroupsController < ApplicationController
 
   # PUT /user_groups/1
   # PUT /user_groups/1.xml
-  def update
-    @user_group = UserGroup.find(params[:id])
+  # def update
+  #   @user_group = UserGroup.find(params[:id])
 
+  #   respond_to do |format|
+  #     if @user_group.update_attributes(params[:user_group])
+  #       format.html { redirect_to(@user_group, :notice => 'User group was successfully updated.') }
+  #       format.xml  { head :ok }
+  #     else
+  #       format.html { render :action => "edit" }
+  #       format.xml  { render :xml => @user_group.errors, :status => :unprocessable_entity }
+  #     end
+  #   end
+  # end
+  def update
+    Rails.logger.debug("params for update #{params}")
+    @user_group = UserGroup.find(params[:id])
     respond_to do |format|
+      # Saves user_group and users
       if @user_group.update_attributes(params[:user_group])
-        format.html { redirect_to(@user_group, :notice => 'User group was successfully updated.') }
-        format.xml  { head :ok }
+        format.html { redirect_to "/rsvp/#{@user_group.code}" }
+        format.json {
+          render :json => {
+            :user_group => @user_group,
+            :users => @user_group.users.as_json(:except => [:relationship]),
+          }
+        }
       else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @user_group.errors, :status => :unprocessable_entity }
+        format.html
+        format.json { render :json => { :errors => "Oops, we couldn't update your info" } }
       end
     end
   end

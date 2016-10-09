@@ -11,8 +11,6 @@ class ApplicationController < ActionController::Base
   attr_reader :current_user
 
   def set_current_user_if_possible
-    # @current_user = nil
-    Rails.logger.debug("session info! #{session}")
     # TODO(Jessica) fancy remember me cookie-ness
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end

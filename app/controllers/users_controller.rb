@@ -17,6 +17,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @users }
+      format.json { render :json => @users }
     end
   end
 
@@ -51,7 +52,7 @@ class UsersController < ApplicationController
   # POST /users.xml
   def create
     @user = User.new(params[:user])
-    authorize @user
+    authorize @current_user
 
     respond_to do |format|
       if @user.save
@@ -68,12 +69,13 @@ class UsersController < ApplicationController
   # PUT /users/1.xml
   def update
     @user = User.find(params[:id])
-    authorize @user
+    authorize @current_user
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to(@user, :notice => 'User was successfully updated.') }
         format.xml  { head :ok }
+        format.json {render :json => { :users => @user.as_json(:except => [:relationship]) } }
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
