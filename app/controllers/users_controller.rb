@@ -41,6 +41,7 @@ class UsersController < ApplicationController
   # POST /users.xml
   def create
     @user = User.new(params[:user])
+    authorize @user
 
     respond_to do |format|
       if @user.save
@@ -57,6 +58,7 @@ class UsersController < ApplicationController
   # PUT /users/1.xml
   def update
     @user = User.find(params[:id])
+    authorize @user
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
@@ -73,6 +75,7 @@ class UsersController < ApplicationController
   # DELETE /users/1.xml
   def destroy
     @user = User.find(params[:id])
+    authorize @user
     @user.destroy
 
     respond_to do |format|
