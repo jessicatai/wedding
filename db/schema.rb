@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20160131005251) do
+ActiveRecord::Schema.define(:version => 20161009094237) do
 
   create_table "user_groups", :force => true do |t|
     t.string   "code"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(:version => 20160131005251) do
     t.integer  "user_group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "role"
+    t.string   "diet"
   end
 
 end

@@ -4,6 +4,16 @@ class UsersController < ApplicationController
   def index
     @users = User.all
 
+    if !@current_user
+      Rails.logger.debug("TODO: return not allowed to access, go to home")
+      redirect_to :controller => :home
+      return
+    elsif !policy(@current_user).create?
+      Rails.logger.debug("TODO: return not allowed to access, edit self")
+      redirect_to :controller => :users, :action => :edit, :id => @current_user.id
+      return
+    end
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @users }

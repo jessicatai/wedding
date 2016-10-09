@@ -1,7 +1,7 @@
 Wedding::Application.routes.draw do
   resources :users
-
   resources :user_groups
+  resources :sessions, only: [:new, :create, :destroy]
 
   get "home/index"
 
@@ -10,6 +10,9 @@ Wedding::Application.routes.draw do
   get "rsvp" => "rsvp#index"
 
   match "rsvp/:code" => "rsvp#update"
+
+  get "login" => "sessions#new", :as => "login"
+  get "logout" => "sessions#destroy", :as => "logout"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
