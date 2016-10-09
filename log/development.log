@@ -65,3 +65,1184 @@ Migrating to CreateUserGroups (20160130092355)
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
   [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("user_groups")[0m
   [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUserGroups (20160131005228)
+Migrating to CreateUsers (20160131005251)
+Migrating to CreateRoles (20161008224708)
+  [1m[35mSQL (0.3ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20161008224708')
+Migrating to CreateAssignments (20161008224818)
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE TABLE "assignments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "role_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20161008224818')
+  [1m[36mSQL (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("assignments")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("roles")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("user_groups")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUserGroups (20160131005228)
+Migrating to CreateUsers (20160131005251)
+Migrating to CreateRoles (20161008224708)
+Migrating to AddRoleAndDietToUser (20161009094237)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUserGroups (20160131005228)
+Migrating to CreateUsers (20160131005251)
+Migrating to CreateRoles (20161008224708)
+Migrating to AddRoleAndDietToUser (20161009094237)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUserGroups (20160131005228)
+Migrating to CreateUsers (20160131005251)
+Migrating to CreateRoles (20161008224708)
+Migrating to AddRoleAndDietToUser (20161009094237)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.4ms)[0m  [1mALTER TABLE "users" ADD "role" integer[0m
+  [1m[35mSQL (0.1ms)[0m  ALTER TABLE "users" ADD "diet" varchar(255)
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20161009094237')[0m
+  [1m[35mSQL (0.2ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("assignments")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("roles")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("user_groups")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUserGroups (20160131005228)
+Migrating to CreateUsers (20160131005251)
+Migrating to CreateRoles (20161008224708)
+Migrating to AddRoleAndDietToUser (20161009094237)
+  [1m[35mSQL (0.2ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("assignments")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("roles")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("user_groups")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM schema_migrations
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to AddRoleAndDietToUser (20161009094237)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (2.3ms)[0m  [1mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "email" varchar(255), "is_attending" boolean, "relationship" integer, "user_group_id" integer, "created_at" datetime, "updated_at" datetime, "role" integer, "diet" varchar(255)) [0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.4ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35mSQL (0.1ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "email" varchar(255), "is_attending" boolean, "relationship" integer, "user_group_id" integer, "created_at" datetime, "updated_at" datetime, "role" integer) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("altered_users")[0m
+  [1m[35mSQL (0.4ms)[0m  DROP TABLE "altered_users"
+  [1m[36mSQL (0.1ms)[0m  [1mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "email" varchar(255), "is_attending" boolean, "relationship" integer, "user_group_id" integer, "created_at" datetime, "updated_at" datetime, "role" integer) [0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.4ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35mSQL (0.1ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "email" varchar(255), "is_attending" boolean, "relationship" integer, "user_group_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("altered_users")[0m
+  [1m[35mSQL (0.1ms)[0m  DROP TABLE "altered_users"
+  [1m[36mAREL (0.1ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20161009094237'[0m
+Migrating to CreateAssignments (20161008224818)
+  [1m[35mSQL (0.3ms)[0m  DROP TABLE "assignments"
+  [1m[36mAREL (0.1ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20161008224818'[0m
+  [1m[35mSQL (0.2ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("roles")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("user_groups")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM schema_migrations
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM schema_migrations
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUserGroups (20160131005228)
+Migrating to CreateUsers (20160131005251)
+Migrating to CreateRoles (20161008224708)
+Migrating to AddRoleAndDietToUser (20161009094237)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.1ms)[0m  [1mALTER TABLE "users" ADD "role" integer[0m
+  [1m[35mSQL (0.1ms)[0m  ALTER TABLE "users" ADD "diet" varchar(255)
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20161009094237')[0m
+  [1m[35mSQL (0.2ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("roles")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("user_groups")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to AddRoleAndDietToUser (20161009094237)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.2ms)[0m  [1mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "email" varchar(255), "is_attending" boolean, "relationship" integer, "user_group_id" integer, "created_at" datetime, "updated_at" datetime, "role" integer, "diet" varchar(255)) [0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.5ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35mSQL (0.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "email" varchar(255), "is_attending" boolean, "relationship" integer, "user_group_id" integer, "created_at" datetime, "updated_at" datetime, "role" integer) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("altered_users")[0m
+  [1m[35mSQL (0.7ms)[0m  DROP TABLE "altered_users"
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "email" varchar(255), "is_attending" boolean, "relationship" integer, "user_group_id" integer, "created_at" datetime, "updated_at" datetime, "role" integer) [0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.5ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35mSQL (0.1ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "email" varchar(255), "is_attending" boolean, "relationship" integer, "user_group_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("altered_users")[0m
+  [1m[35mSQL (0.1ms)[0m  DROP TABLE "altered_users"
+  [1m[36mAREL (0.1ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20161009094237'[0m
+Migrating to CreateRoles (20161008224708)
+  [1m[35mSQL (0.3ms)[0m  DROP TABLE "roles"
+  [1m[36mAREL (0.1ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20161008224708'[0m
+  [1m[35mSQL (0.2ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("user_groups")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM schema_migrations
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM schema_migrations
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUserGroups (20160131005228)
+Migrating to CreateUsers (20160131005251)
+Migrating to AddRoleAndDietToUser (20161009094237)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.4ms)[0m  [1mALTER TABLE "users" ADD "role" integer[0m
+  [1m[35mSQL (0.1ms)[0m  ALTER TABLE "users" ADD "diet" varchar(255)
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20161009094237')[0m
+  [1m[35mSQL (0.2ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("user_groups")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/jessica_tai/.rvm/rubies/ruby-1.9.3-p551/lib/ruby/1.9.1/webrick/httpserver.rb:138)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-10-09 03:12:01 -0700
+  Processing by SessionsController#new as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "flash"=>{}}
+Rendered sessions/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 11ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/jessica_tai/.rvm/rubies/ruby-1.9.3-p551/lib/ruby/1.9.1/webrick/httpserver.rb:138)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-10-09 03:13:10 -0700
+  Processing by SessionsController#new as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw="}
+Rendered sessions/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 12ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-10-09 03:13:13 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "session"=>{"email"=>"a", "password"=>"[FILTERED]"}, "commit"=>"login"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw="}
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+Redirected to http://0.0.0.0:3000/sessions/new
+Completed 302 Found in 63ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-09 03:13:13 -0700
+  Processing by SessionsController#new as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "flash"=>{:notice=>"Invalid email or password"}}
+Rendered sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-10-09 03:13:28 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "session"=>{"email"=>"c", "password"=>"[FILTERED]"}, "commit"=>"login"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "flash"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/sessions/new
+Completed 302 Found in 8ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-09 03:13:28 -0700
+  Processing by SessionsController#new as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "flash"=>{:notice=>"Invalid email or password"}}
+Rendered sessions/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-10-09 03:15:58 -0700
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/jessica_tai/side_projects/wedding/app/controllers/application_controller.rb:1)
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "session"=>{"email"=>"c", "password"=>"[FILTERED]"}, "commit"=>"login"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "flash"=>{}}
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'c' LIMIT 1
+Completed 500 Internal Server Error in 72ms
+
+NameError (undefined local variable or method `root_url' for #<SessionsController:0x007fb3d000a3a8>):
+  app/controllers/sessions_controller.rb:9:in `create'
+
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.1ms)
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-10-09 03:22:12 -0700
+
+SyntaxError (/Users/jessica_tai/side_projects/wedding/app/controllers/sessions_controller.rb:9: syntax error, unexpected tASSOC, expecting '}'
+...    redirect_to {:controller => :user, :action => :show}, :n...
+...                               ^
+/Users/jessica_tai/side_projects/wedding/app/controllers/sessions_controller.rb:9: syntax error, unexpected ',', expecting keyword_end
+...er => :user, :action => :show}, :notice => "Logged in!"
+...                               ^):
+  
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from synchronize at <internal:prelude>:10)
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.4ms)
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (125.9ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-10-09 03:24:50 -0700
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/jessica_tai/side_projects/wedding/app/controllers/application_controller.rb:1)
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "session"=>{"email"=>"c", "password"=>"[FILTERED]"}, "commit"=>"login"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "flash"=>{}}
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'c' LIMIT 1
+Redirected to 
+Completed 404 Not Found in 69ms
+
+ActionController::RoutingError (No route matches {:controller=>"user", :action=>"show", :notice=>"Logged in!"}):
+  app/controllers/sessions_controller.rb:9:in `create'
+
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-10-09 03:25:50 -0700
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/jessica_tai/side_projects/wedding/app/controllers/application_controller.rb:1)
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "session"=>{"email"=>"c", "password"=>"[FILTERED]"}, "commit"=>"login"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "flash"=>{}}
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'c' LIMIT 1
+Redirected to 
+Completed 404 Not Found in 68ms
+
+ActionController::RoutingError (No route matches {:controller=>"users", :action=>"show", :notice=>"Logged in!"}):
+  app/controllers/sessions_controller.rb:9:in `create'
+
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-10-09 03:26:25 -0700
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/jessica_tai/side_projects/wedding/app/controllers/application_controller.rb:1)
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "session"=>{"email"=>"c", "password"=>"[FILTERED]"}, "commit"=>"login"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "flash"=>{}}
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'c' LIMIT 1
+Redirected to http://0.0.0.0:3000/users?notice=Logged+in%21
+Completed 302 Found in 71ms
+
+
+Started GET "/users?notice=Logged+in%21" for 127.0.0.1 at 2016-10-09 03:26:26 -0700
+  Processing by UsersController#index as HTML
+  Parameters: {"notice"=>"Logged in!"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUserGroup Load (0.4ms)[0m  [1mSELECT "user_groups".* FROM "user_groups" WHERE "user_groups"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "user_groups".* FROM "user_groups" WHERE "user_groups"."id" = 1 LIMIT 1
+Rendered users/index.html.erb within layouts/application (48.8ms)
+Completed 200 OK in 61ms (Views: 52.5ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-10-09 03:28:12 -0700
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/jessica_tai/side_projects/wedding/app/controllers/application_controller.rb:1)
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "session"=>{"email"=>"c", "password"=>"[FILTERED]"}, "commit"=>"login"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (12.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'c' LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users?notice=Logged+in%21
+Completed 302 Found in 70ms
+
+
+Started GET "/users?notice=Logged+in%21" for 127.0.0.1 at 2016-10-09 03:28:13 -0700
+  Processing by UsersController#index as HTML
+  Parameters: {"notice"=>"Logged in!"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUserGroup Load (0.5ms)[0m  SELECT "user_groups".* FROM "user_groups" WHERE "user_groups"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "user_groups".* FROM "user_groups" WHERE "user_groups"."id" = 1 LIMIT 1[0m
+Rendered users/index.html.erb within layouts/application (40.0ms)
+Completed 200 OK in 49ms (Views: 42.9ms | ActiveRecord: 14.7ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-10-09 03:30:59 -0700
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/jessica_tai/side_projects/wedding/app/controllers/application_controller.rb:1)
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "session"=>{"email"=>"c", "password"=>"[FILTERED]"}, "commit"=>"login"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (13.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'c' LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users?notice=Logged+in%21
+Completed 302 Found in 69ms
+
+
+Started GET "/users?notice=Logged+in%21" for 127.0.0.1 at 2016-10-09 03:30:59 -0700
+  Processing by UsersController#index as HTML
+  Parameters: {"notice"=>"Logged in!"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUserGroup Load (0.4ms)[0m  SELECT "user_groups".* FROM "user_groups" WHERE "user_groups"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "user_groups".* FROM "user_groups" WHERE "user_groups"."id" = 1 LIMIT 1[0m
+Rendered users/index.html.erb within layouts/application (49.2ms)
+Completed 200 OK in 58ms (Views: 52.1ms | ActiveRecord: 14.9ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-10-09 03:31:38 -0700
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/jessica_tai/side_projects/wedding/app/controllers/application_controller.rb:1)
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "session"=>{"email"=>"c", "password"=>"[FILTERED]"}, "commit"=>"login"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (13.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'c' LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users?notice=Logged+in%21
+Completed 302 Found in 70ms
+
+
+Started GET "/users?notice=Logged+in%21" for 127.0.0.1 at 2016-10-09 03:31:38 -0700
+  Processing by UsersController#index as HTML
+  Parameters: {"notice"=>"Logged in!"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Completed 500 Internal Server Error in 7ms
+
+Pundit::NotDefinedError (unable to find policy NilClassPolicy for ):
+  app/controllers/users_controller.rb:6:in `index'
+
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.2ms)
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.3ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-10-09 03:35:33 -0700
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/jessica_tai/side_projects/wedding/app/controllers/application_controller.rb:1)
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "session"=>{"email"=>"c", "password"=>"[FILTERED]"}, "commit"=>"login"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (14.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'c' LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users
+Completed 302 Found in 69ms
+
+
+Started GET "/users" for 127.0.0.1 at 2016-10-09 03:35:33 -0700
+  Processing by UsersController#index as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Completed 500 Internal Server Error in 12ms
+
+NoMethodError (undefined method `create?' for #<User:0x007fef03a73420>):
+  app/controllers/users_controller.rb:7:in `index'
+
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.2ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-10-09 03:35:59 -0700
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/jessica_tai/side_projects/wedding/app/controllers/application_controller.rb:1)
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "session"=>{"email"=>"c", "password"=>"[FILTERED]"}, "commit"=>"login"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (14.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'c' LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users
+Completed 302 Found in 61ms
+
+
+Started GET "/users" for 127.0.0.1 at 2016-10-09 03:35:59 -0700
+  Processing by UsersController#index as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Completed 500 Internal Server Error in 12ms
+
+NoMethodError (undefined method `create?' for #<User:0x007ff62ba06148>):
+  app/controllers/users_controller.rb:7:in `index'
+
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.7ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-10-09 03:36:34 -0700
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/jessica_tai/side_projects/wedding/app/controllers/application_controller.rb:1)
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "session"=>{"email"=>"c", "password"=>"[FILTERED]"}, "commit"=>"login"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (14.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'c' LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users
+Completed 302 Found in 68ms
+
+
+Started GET "/users" for 127.0.0.1 at 2016-10-09 03:36:34 -0700
+  Processing by UsersController#index as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+create??? #<User:0x007fd2930db458>, #<User:0x007fd2930db458>, true <- value
+in show.. #<User:0x007fd2930db458>, policy true
+create??? #<User:0x007fd2930db458>, #<User:0x007fd2930db458>, true <- value
+  [1m[35mUserGroup Load (0.4ms)[0m  SELECT "user_groups".* FROM "user_groups" WHERE "user_groups"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "user_groups".* FROM "user_groups" WHERE "user_groups"."id" = 1 LIMIT 1[0m
+Rendered users/index.html.erb within layouts/application (34.3ms)
+Completed 200 OK in 61ms (Views: 37.7ms | ActiveRecord: 15.9ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-10-09 03:38:48 -0700
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/jessica_tai/side_projects/wedding/app/controllers/application_controller.rb:1)
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "session"=>{"email"=>"c", "password"=>"[FILTERED]"}, "commit"=>"login"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (11.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'c' LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users
+Completed 302 Found in 70ms
+
+
+Started GET "/users" for 127.0.0.1 at 2016-10-09 03:38:49 -0700
+  Processing by UsersController#index as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+***** Debugger requested, but was not available (ensure ruby-debug is listed in Gemfile/installed as gem): Start server with --debugger to enable *****
+Completed 500 Internal Server Error in 25ms
+
+NoMethodError (undefined method `log' for #<String:0x007fba43ae01c8>):
+  app/policies/user_policy.rb:15:in `user_admin?'
+  app/policies/user_policy.rb:9:in `create?'
+  app/controllers/users_controller.rb:7:in `index'
+
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.3ms)
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.6ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-10-09 03:39:12 -0700
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/jessica_tai/side_projects/wedding/app/controllers/application_controller.rb:1)
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "session"=>{"email"=>"c", "password"=>"[FILTERED]"}, "commit"=>"login"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (12.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'c' LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users
+Completed 302 Found in 65ms
+
+
+Started GET "/users" for 127.0.0.1 at 2016-10-09 03:39:12 -0700
+  Processing by UsersController#index as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+role admin
+create??? #<User:0x007fc3d3a024b0>, #<User:0x007fc3d3a024b0>, true <- value
+role admin
+in show.. #<User:0x007fc3d3a024b0>, policy true
+role admin
+create??? #<User:0x007fc3d3a024b0>, #<User:0x007fc3d3a024b0>, true <- value
+role admin
+  [1m[35mUserGroup Load (0.4ms)[0m  SELECT "user_groups".* FROM "user_groups" WHERE "user_groups"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "user_groups".* FROM "user_groups" WHERE "user_groups"."id" = 1 LIMIT 1[0m
+Rendered users/index.html.erb within layouts/application (38.4ms)
+Completed 200 OK in 68ms (Views: 43.1ms | ActiveRecord: 14.2ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-10-09 03:46:07 -0700
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/jessica_tai/side_projects/wedding/app/controllers/application_controller.rb:1)
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "session"=>{"email"=>"c", "password"=>"[FILTERED]"}, "commit"=>"login"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'c' LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users
+Completed 302 Found in 67ms
+
+
+Started GET "/users" for 127.0.0.1 at 2016-10-09 03:46:08 -0700
+  Processing by UsersController#index as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+role admin
+create??? #<User:0x007f99fc783c80>, #<User:0x007f99fc783c80>, true <- value
+role admin
+in show.. #<User:0x007f99fc783c80>, policy true
+role admin
+create??? #<User:0x007f99fc783c80>, #<User:0x007f99fc783c80>, true <- value
+role admin
+  [1m[35mUserGroup Load (0.4ms)[0m  SELECT "user_groups".* FROM "user_groups" WHERE "user_groups"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "user_groups".* FROM "user_groups" WHERE "user_groups"."id" = 1 LIMIT 1[0m
+Rendered users/index.html.erb within layouts/application (43.1ms)
+Completed 200 OK in 70ms (Views: 53.5ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-10-09 03:46:30 -0700
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/jessica_tai/side_projects/wedding/app/controllers/application_controller.rb:1)
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "session"=>{"email"=>"c", "password"=>"[FILTERED]"}, "commit"=>"login"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'c' LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users
+Completed 302 Found in 72ms
+
+
+Started GET "/users" for 127.0.0.1 at 2016-10-09 03:46:31 -0700
+  Processing by UsersController#index as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+role admin
+create??? #<User:0x007ffcb9afecc8>, #<User:0x007ffcb9afecc8>, true <- value
+role admin
+in show.. #<User:0x007ffcb9afecc8>, policy true
+role admin
+create??? #<User:0x007ffcb9afecc8>, #<User:0x007ffcb9afecc8>, true <- value
+role admin
+  [1m[35mUserGroup Load (0.4ms)[0m  SELECT "user_groups".* FROM "user_groups" WHERE "user_groups"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "user_groups".* FROM "user_groups" WHERE "user_groups"."id" = 1 LIMIT 1[0m
+Rendered users/index.html.erb within layouts/application (35.4ms)
+Completed 200 OK in 64ms (Views: 38.5ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-10-09 03:47:17 -0700
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/jessica_tai/side_projects/wedding/app/controllers/application_controller.rb:1)
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "session"=>{"email"=>"c", "password"=>"[FILTERED]"}, "commit"=>"login"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'c' LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users
+Completed 302 Found in 70ms
+
+
+Started GET "/users" for 127.0.0.1 at 2016-10-09 03:47:17 -0700
+  Processing by UsersController#index as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Completed 500 Internal Server Error in 13ms
+
+SyntaxError (/Users/jessica_tai/side_projects/wedding/app/policies/user_policy.rb:19: unterminated string meets end of file
+/Users/jessica_tai/side_projects/wedding/app/policies/user_policy.rb:19: syntax error, unexpected $end, expecting ')'):
+  app/controllers/users_controller.rb:7:in `index'
+
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.3ms)
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.5ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/jessica_tai/.rvm/rubies/ruby-1.9.3-p551/lib/ruby/1.9.1/webrick/httpserver.rb:138)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-10-09 03:47:35 -0700
+  Processing by UsersController#index as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+role admin 1
+create??? #<User:0x007feade27c8f8>, #<User:0x007feade27c8f8>, true <- value
+role admin 1
+in show.. #<User:0x007feade27c8f8>, policy true
+role admin 1
+create??? #<User:0x007feade27c8f8>, #<User:0x007feade27c8f8>, true <- value
+role admin 1
+  [1m[35mUserGroup Load (0.3ms)[0m  SELECT "user_groups".* FROM "user_groups" WHERE "user_groups"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "user_groups".* FROM "user_groups" WHERE "user_groups"."id" = 1 LIMIT 1[0m
+Rendered users/index.html.erb within layouts/application (39.2ms)
+Completed 200 OK in 93ms (Views: 42.7ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-10-09 03:47:38 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "session"=>{"email"=>"c", "password"=>"[FILTERED]"}, "commit"=>"login"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'c' LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users
+Completed 302 Found in 27ms
+
+
+Started GET "/users" for 127.0.0.1 at 2016-10-09 03:47:38 -0700
+  Processing by UsersController#index as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+role admin 1
+create??? #<User:0x007feae19ceef0>, #<User:0x007feae19ceef0>, true <- value
+role admin 1
+in show.. #<User:0x007feae19ceef0>, policy true
+role admin 1
+create??? #<User:0x007feae19ceef0>, #<User:0x007feae19ceef0>, true <- value
+role admin 1
+  [1m[35mUserGroup Load (0.2ms)[0m  SELECT "user_groups".* FROM "user_groups" WHERE "user_groups"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "user_groups".* FROM "user_groups" WHERE "user_groups"."id" = 1 LIMIT 1[0m
+Rendered users/index.html.erb within layouts/application (42.4ms)
+Completed 200 OK in 63ms (Views: 48.9ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-10-09 03:48:12 -0700
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/jessica_tai/side_projects/wedding/app/controllers/application_controller.rb:1)
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "session"=>{"email"=>"c", "password"=>"[FILTERED]"}, "commit"=>"login"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'c' LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users
+Completed 302 Found in 64ms
+
+
+Started GET "/users" for 127.0.0.1 at 2016-10-09 03:48:13 -0700
+  Processing by UsersController#index as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+role admin 1, role 
+create??? #<User:0x007fbbe1575108>, #<User:0x007fbbe1575108>, true <- value
+role admin 1, role 
+in show.. #<User:0x007fbbe1575108>, policy true
+role admin 1, role 
+create??? #<User:0x007fbbe1575108>, #<User:0x007fbbe1575108>, true <- value
+role admin 1, role 
+  [1m[35mUserGroup Load (0.1ms)[0m  SELECT "user_groups".* FROM "user_groups" WHERE "user_groups"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "user_groups".* FROM "user_groups" WHERE "user_groups"."id" = 1 LIMIT 1[0m
+Rendered users/index.html.erb within layouts/application (36.6ms)
+Completed 200 OK in 62ms (Views: 45.8ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-10-09 03:48:48 -0700
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/jessica_tai/side_projects/wedding/app/controllers/application_controller.rb:1)
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "session"=>{"email"=>"c", "password"=>"[FILTERED]"}, "commit"=>"login"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'c' LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users
+Completed 302 Found in 67ms
+
+
+Started GET "/users" for 127.0.0.1 at 2016-10-09 03:48:49 -0700
+  Processing by UsersController#index as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+role admin 1, role , false <-- return value
+create??? #<User:0x007f91931ef1a0>, #<User:0x007f91931ef1a0>, true <- value
+role admin 1, role , false <-- return value
+in show.. #<User:0x007f91931ef1a0>, policy true
+role admin 1, role , false <-- return value
+create??? #<User:0x007f91931ef1a0>, #<User:0x007f91931ef1a0>, true <- value
+role admin 1, role , false <-- return value
+  [1m[35mUserGroup Load (0.1ms)[0m  SELECT "user_groups".* FROM "user_groups" WHERE "user_groups"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "user_groups".* FROM "user_groups" WHERE "user_groups"."id" = 1 LIMIT 1[0m
+Rendered users/index.html.erb within layouts/application (32.6ms)
+Completed 200 OK in 59ms (Views: 42.4ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-10-09 03:49:51 -0700
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/jessica_tai/side_projects/wedding/app/controllers/application_controller.rb:1)
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "session"=>{"email"=>"c", "password"=>"[FILTERED]"}, "commit"=>"login"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'c' LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users
+Completed 302 Found in 65ms
+
+
+Started GET "/users" for 127.0.0.1 at 2016-10-09 03:49:51 -0700
+  Processing by UsersController#index as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+role admin 1, role , false <-- return value
+create??? #<User:0x007fca9225ca10>, #<User:0x007fca9225ca10>, false <- value
+role admin 1, role , false <-- return value
+in show.. #<User:0x007fca9225ca10>, policy false
+role admin 1, role , false <-- return value
+create??? #<User:0x007fca9225ca10>, #<User:0x007fca9225ca10>, false <- value
+role admin 1, role , false <-- return value
+Redirected to 
+Completed 500 Internal Server Error in 26ms
+
+NoMethodError (undefined method `edit_url' for #<UsersController:0x007fca953ad240>):
+  app/controllers/users_controller.rb:11:in `index'
+
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (17.5ms)
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.1ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-10-09 03:51:10 -0700
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/jessica_tai/side_projects/wedding/app/controllers/application_controller.rb:1)
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "session"=>{"email"=>"c", "password"=>"[FILTERED]"}, "commit"=>"login"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'c' LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users
+Completed 302 Found in 65ms
+
+
+Started GET "/users" for 127.0.0.1 at 2016-10-09 03:51:11 -0700
+  Processing by UsersController#index as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+role admin 1, role , false <-- return value
+create??? #<User:0x007fbf4126b120>, #<User:0x007fbf4126b120>, false <- value
+role admin 1, role , false <-- return value
+in show.. #<User:0x007fbf4126b120>, policy false
+role admin 1, role , false <-- return value
+create??? #<User:0x007fbf4126b120>, #<User:0x007fbf4126b120>, false <- value
+role admin 1, role , false <-- return value
+Redirected to http://0.0.0.0:3000/users/2/edit
+Completed 500 Internal Server Error in 25ms
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/users_controller.rb:14:in `index'
+
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.5ms)
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.5ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-10-09 03:52:05 -0700
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/jessica_tai/side_projects/wedding/app/controllers/application_controller.rb:1)
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "session"=>{"email"=>"c", "password"=>"[FILTERED]"}, "commit"=>"login"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'c' LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users
+Completed 302 Found in 74ms
+
+
+Started GET "/users" for 127.0.0.1 at 2016-10-09 03:52:06 -0700
+  Processing by UsersController#index as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+role admin 1, role , false <-- return value
+create??? #<User:0x007f7fe14ee7c0>, #<User:0x007f7fe14ee7c0>, false <- value
+role admin 1, role , false <-- return value
+in show.. #<User:0x007f7fe14ee7c0>, policy false
+role admin 1, role , false <-- return value
+create??? #<User:0x007f7fe14ee7c0>, #<User:0x007f7fe14ee7c0>, false <- value
+role admin 1, role , false <-- return value
+Redirected to http://0.0.0.0:3000/users/2/edit
+Completed 500 Internal Server Error in 26ms
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/users_controller.rb:14:in `index'
+
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.2ms)
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.5ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2016-10-09 03:52:44 -0700
+  Processing by SessionsController#destroy as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered sessions/destroy.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 14ms (Views: 5.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-09 03:52:54 -0700
+  Processing by SessionsController#new as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw="}
+Rendered sessions/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 10ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-10-09 03:52:59 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"login"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = '' LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/sessions/new
+Completed 302 Found in 21ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-09 03:52:59 -0700
+  Processing by SessionsController#new as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "flash"=>{:notice=>"Invalid email or password"}}
+Rendered sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-10-09 03:53:02 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "session"=>{"email"=>"a", "password"=>"[FILTERED]"}, "commit"=>"login"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "flash"=>{}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'a' LIMIT 1
+Redirected to http://0.0.0.0:3000/sessions/new
+Completed 302 Found in 7ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-09 03:53:02 -0700
+  Processing by SessionsController#new as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "flash"=>{:notice=>"Invalid email or password"}}
+Rendered sessions/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-10-09 03:53:09 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "session"=>{"email"=>"c", "password"=>"[FILTERED]"}, "commit"=>"login"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "flash"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'c' LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users
+Completed 302 Found in 11ms
+
+
+Started GET "/users" for 127.0.0.1 at 2016-10-09 03:53:09 -0700
+  Processing by UsersController#index as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+role admin 1, role , false <-- return value
+create??? #<User:0x007f7fe50b3a08>, #<User:0x007f7fe50b3a08>, false <- value
+role admin 1, role , false <-- return value
+in show.. #<User:0x007f7fe50b3a08>, policy false
+role admin 1, role , false <-- return value
+create??? #<User:0x007f7fe50b3a08>, #<User:0x007f7fe50b3a08>, false <- value
+role admin 1, role , false <-- return value
+Redirected to http://0.0.0.0:3000/users/2/edit
+Completed 500 Internal Server Error in 32ms
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/users_controller.rb:14:in `index'
+
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.2ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2016-10-09 03:55:42 -0700
+  Processing by SessionsController#destroy as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered sessions/destroy.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 11ms (Views: 5.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-10-09 03:55:44 -0700
+  Processing by UsersController#index as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw="}
+  [1m[36mUser Load (15.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Completed 500 Internal Server Error in 19ms
+
+Pundit::NotDefinedError (unable to find policy NilClassPolicy for ):
+  app/controllers/users_controller.rb:7:in `index'
+
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.7ms)
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.7ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/jessica_tai/.rvm/rubies/ruby-1.9.3-p551/lib/ruby/1.9.1/webrick/httpserver.rb:138)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-10-09 03:55:58 -0700
+  Processing by UsersController#index as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw="}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Redirected to http://0.0.0.0:3000/home/index
+Completed 500 Internal Server Error in 40ms
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/users_controller.rb:13:in `index'
+
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.1ms)
+Rendered /Users/jessica_tai/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.6ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/jessica_tai/.rvm/rubies/ruby-1.9.3-p551/lib/ruby/1.9.1/webrick/httpserver.rb:138)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-09 03:56:56 -0700
+  Processing by SessionsController#new as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw="}
+Rendered sessions/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 12ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-10-09 03:57:02 -0700
+  Processing by UsersController#index as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw="}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Redirected to http://0.0.0.0:3000/home/index
+Completed 302 Found in 22ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2016-10-09 03:57:02 -0700
+  Processing by HomeController#index as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw="}
+Rendered home/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-09 03:57:06 -0700
+  Processing by SessionsController#new as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw="}
+Rendered sessions/new.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-10-09 03:57:08 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "session"=>{"email"=>"c", "password"=>"[FILTERED]"}, "commit"=>"login"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw="}
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'c' LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users
+Completed 302 Found in 24ms
+
+
+Started GET "/users" for 127.0.0.1 at 2016-10-09 03:57:08 -0700
+  Processing by UsersController#index as HTML
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+role admin 1, role , false <-- return value
+create??? #<User:0x007fa653853cb0>, #<User:0x007fa653853cb0>, false <- value
+role admin 1, role , false <-- return value
+TODO: return not allowed to access
+Redirected to http://0.0.0.0:3000/users/2/edit
+Completed 302 Found in 31ms
+
+
+Started GET "/users/2/edit" for 127.0.0.1 at 2016-10-09 03:57:08 -0700
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+session info! {"session_id"=>"0905fda15833c9e56cca6bc1afa8c6d9", "_csrf_token"=>"JdBrQtsXX24XEXZwVaAS1vOyVdhmxV9rKEaaX8u0LTw=", "user_id"=>2}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered users/_form.html.erb (33.9ms)
+Rendered users/edit.html.erb within layouts/application (37.6ms)
+Completed 200 OK in 48ms (Views: 42.2ms | ActiveRecord: 1.7ms)

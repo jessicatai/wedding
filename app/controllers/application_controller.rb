@@ -6,15 +6,15 @@ class ApplicationController < ActionController::Base
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
 
-
   protected
 
   attr_reader :current_user
 
   def set_current_user_if_possible
-    Rails.logger.debug("set current user if possible!!!")
-    @current_user = nil
+    # @current_user = nil
+    Rails.logger.debug("session info! #{session}")
     # TODO(Jessica) fancy remember me cookie-ness
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
   private
