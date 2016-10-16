@@ -9,7 +9,9 @@ Wedding::Application.routes.draw do
 
   get "rsvp" => "rsvp#index"
 
-  match "rsvp/:code" => "rsvp#update"
+  post "rsvp/edit/:code" => "rsvp#show"
+  get "rsvp/show" => "rsvp#show"
+  get "rsvp/show/:code" => "rsvp#show"
 
   get "login" => "sessions#new", :as => "login"
   get "logout" => "sessions#destroy", :as => "logout"

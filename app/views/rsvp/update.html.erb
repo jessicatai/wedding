@@ -6,17 +6,36 @@ code: <%= @user_group.code %>
     <%= f.text_field :address_line1 %>
   </div>
 
+  <div class="field">
+    <%= f.label :address_line2 %><br />
+    <%= f.text_field :address_line2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </div>
+
+  <div class="field">
+    <%= f.label :zipcode %><br />
+    <%= f.text_field :zipcode %>
+  </div>
+
+  <%= f.hidden_field :code, :value => @user_group.code %>
+
   <% @user_group.users.each do |user| %>
     User:
-    <%= user %>
      <%= fields_for('users[]', user) do |u| %>
       <div class="field">
-        <%= u.label :first_name %><br />
-        <%= u.text_field :first_name %>
+        <%= u.label :first_name %>:<%= user.first_name %>
       </div>
       <div class="field">
-        <%= u.label :last_name %><br />
-        <%= u.text_field :last_name %>
+        <%= u.label :last_name %>: <%= user.last_name %>
       </div>
       <div class="field">
         <%= u.label :email %><br />
@@ -26,8 +45,22 @@ code: <%= @user_group.code %>
         <%= u.label :is_attending %><br />
         <%= u.check_box :is_attending %>
       </div>
+      <div class="field">
+        Vegetarian?<br />
+        <%= u.check_box :diet %>
+      </div>
+      <div class="field">
+        sake of including id<br />
+        <%= u.text_field :id %>
+      </div>
     <% end %>
   <% end %>
+
+  <div class="field">
+    <%= f.label :notes %><br />
+    <%= f.text_field :notes %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

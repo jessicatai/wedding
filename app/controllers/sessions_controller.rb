@@ -5,12 +5,19 @@ class SessionsController < ApplicationController
   # POST /sessions
   def create
     user = User.find_by_email(params[:session][:email])
-    if user # TODO: make passwords? && user.authenticate(params[:password])
+    if user && [0,1,2].include?(user.role) # TODO: make passwords? && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to :controller => :users
+      respond_to do |format|
+        format.json { render :json => { :user_id => user.id } }
+        format.html { redirect_to :controller => :users}
+      end
     else
-     flash[:notice] = "Invalid wedding party email"
-     redirect_to new_session_path
+      error_message = "Invalid wedding party email"
+      flash[:notice] = error_message
+      respond_to do |format|
+        format.json { render :json => { :errors => error_message } }
+        format.html { redirect_to new_session_path }
+      end
     end
   end
 

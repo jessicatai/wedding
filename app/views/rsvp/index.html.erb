@@ -1,6 +1,6 @@
 <h1> RSVP </h1>
-<%= form_tag("/rsvp/show", method: "post") do %>
-  <%= label_tag(:code, "Enter your RSVP code:") %>
+<%= form_tag("/rsvp/show", method: "get") do %>
+  <%= label_tag(:code, "Enter your RSVP code (see invite):") %>
   <%= text_field_tag(:code) %>
   <%= submit_tag("Search by code") %>
 <% end %>
