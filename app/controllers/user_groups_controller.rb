@@ -17,7 +17,7 @@ class UserGroupsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @user_group }
+      format.json  { render :json => @user_group }
     end
   end
 
@@ -54,27 +54,21 @@ class UserGroupsController < ApplicationController
   end
 
   # PUT /user_groups/1
-  # PUT /user_groups/1.xml
-  # def update
-  #   @user_group = UserGroup.find(params[:id])
-
-  #   respond_to do |format|
-  #     if @user_group.update_attributes(params[:user_group])
-  #       format.html { redirect_to(@user_group, :notice => 'User group was successfully updated.') }
-  #       format.xml  { head :ok }
-  #     else
-  #       format.html { render :action => "edit" }
-  #       format.xml  { render :xml => @user_group.errors, :status => :unprocessable_entity }
-  #     end
-  #   end
-  # end
+  # PUT /user_groups/1.json
   def update
-    Rails.logger.debug("params for update #{params}")
-    @user_group = UserGroup.find(params[:id])
+    id = params[:id]
+    @user_group = UserGroup.find(id)
+
     respond_to do |format|
       # Saves user_group and users
-      if @user_group.update_attributes(params[:user_group])
-        format.html { redirect_to "/rsvp/#{@user_group.code}" }
+      if @user_group && @user_group.update_attributes(params[:user_group])
+        params[:users] && params[:users].each do |id, attributes|
+          user = User.find(id)
+          unless user.update_attributes!(attributes.except(:id))
+            Rails.logger.error("failed to update user #{user.id}")
+          end
+        end
+        format.html { render :controller => :rsvp, :action => :show, :code => @user_group.code }
         format.json {
           render :json => {
             :user_group => @user_group,
@@ -82,7 +76,7 @@ class UserGroupsController < ApplicationController
           }
         }
       else
-        format.html
+        format.html { redirect_to "/rsvp" }
         format.json { render :json => { :errors => "Oops, we couldn't update your info" } }
       end
     end
