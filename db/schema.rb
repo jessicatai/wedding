@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20161009094237) do
+ActiveRecord::Schema.define(:version => 20161017022718) do
 
   create_table "user_groups", :force => true do |t|
     t.string   "code"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20161009094237) do
     t.text     "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "tier"
   end
 
   create_table "users", :force => true do |t|

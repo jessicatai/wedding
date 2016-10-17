@@ -120,7 +120,8 @@ curl -H "Content-Type: application/json" -X PUT -d '{
       "city": string,
       "state": string,
       "zipcode": string
-      "notes": text
+      "notes": text,
+      "tier": integer
     },
     "users": {
       [
