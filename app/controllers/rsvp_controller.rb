@@ -3,7 +3,7 @@ class RsvpController < ApplicationController
     code = params[:code]
     @user_group = UserGroup.find_by_code(code)
     respond_to do |format|
-      format.html { render :action => :update }
+      # format.html { render :action => :update }
       format.json {
         render :json => {
           :user_group => @user_group,

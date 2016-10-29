@@ -8,6 +8,8 @@ gem 'rails', '3.0.20'
 gem 'sqlite3'
 gem 'pundit'
 
+gem 'rack-cors', :require => 'rack/cors'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
