@@ -2,22 +2,28 @@ class UserGroupsController < ApplicationController
   # GET /user_groups
   # GET /user_groups.xml
   def index
-    @user_groups = UserGroup.all
-
     respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @user_groups }
+      if @current_user && policy(@current_user).show?
+        @user_groups = UserGroup.all
+        format.html # index.html.erb
+        format.json { render :json => @user_groups }
+      else
+        format.json { render :json => { :errors => "HEY YOU! You do not have access to this." } }
+      end
     end
   end
 
   # GET /user_groups/1
   # GET /user_groups/1.xml
   def show
-    @user_group = UserGroup.find(params[:id])
-
     respond_to do |format|
-      format.html # show.html.erb
-      format.json  { render :json => @user_group }
+      if policy(@current_user).show?
+        @user_group = UserGroup.find(params[:id])
+        format.html # show.html.erb
+        format.json { render :json => @user_group }
+      else
+        format.json { render :json => { :errors => "HEY YOU! You do not have access to this." } }
+      end
     end
   end
 

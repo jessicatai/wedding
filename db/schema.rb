@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20161017022718) do
+ActiveRecord::Schema.define(:version => 20161030005036) do
 
   create_table "user_groups", :force => true do |t|
     t.string   "code"
@@ -24,6 +24,9 @@ ActiveRecord::Schema.define(:version => 20161017022718) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "tier"
+    t.string   "lodging_friday"
+    t.string   "lodging_saturday"
+    t.string   "lodging_sunday"
   end
 
   create_table "users", :force => true do |t|

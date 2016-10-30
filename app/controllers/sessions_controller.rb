@@ -1,11 +1,13 @@
 class SessionsController < ApplicationController
+  ADMIN_ROLES = [0,1,2]
+
   def new
   end
 
   # POST /sessions
   def create
     user = User.find_by_email(params[:session][:email])
-    if user && [0,1,2].include?(user.role) # TODO: make passwords? && user.authenticate(params[:password])
+    if user && ADMIN_ROLES.include?(user.role) # TODO: make passwords? && user.authenticate(params[:password])
       session[:user_id] = user.id
       respond_to do |format|
         format.json { render :json => { :user_id => user.id } }

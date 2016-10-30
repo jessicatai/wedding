@@ -22,8 +22,11 @@ serve page with input for group code
     "address_line2": string,
     "city": string,
     "state": string,
-    "zipcode": string
-    "notes": text
+    "zipcode": string,
+    "notes": text,
+    "lodging_friday": string (null | 'REQUESTED' | 'CONFIRMED'),
+    "lodging_saturday": string (null | 'REQUESTED' | 'CONFIRMED'),
+    "lodging_sunday": string (null | 'REQUESTED' | 'CONFIRMED')
   },
   "users": {
     [
@@ -60,8 +63,11 @@ Notes: first and last name are not editable, payload excludes updating or return
     "address_line2": string,
     "city": string,
     "state": string,
-    "zipcode": string
-    "notes": text
+    "zipcode": string,
+    "notes": text,
+    "lodging_friday": string (null | 'REQUESTED' | 'CONFIRMED'),
+    "lodging_saturday": string (null | 'REQUESTED' | 'CONFIRMED'),
+    "lodging_sunday": string (null | 'REQUESTED' | 'CONFIRMED')
   },
   "users": {
     [
@@ -90,7 +96,10 @@ curl -H "Content-Type: application/json" -X PUT -d '{
     "state": "CA",
     "zipcode": "12345",
     "code": "TEST",
-    "notes": "test notes"
+    "notes": "test notes",
+    "lodging_friday": null,
+    "lodging_saturday":'REQUESTED',
+    "lodging_sunday": 'REQUESTED'
   },
   "users": {
     "1": {
@@ -121,7 +130,10 @@ curl -H "Content-Type: application/json" -X PUT -d '{
       "state": string,
       "zipcode": string
       "notes": text,
-      "tier": integer
+      "tier": integer,
+      "lodging_friday": string (null | 'REQUESTED' | 'CONFIRMED'),
+      "lodging_saturday": string (null | 'REQUESTED' | 'CONFIRMED'),
+      "lodging_sunday": string (null | 'REQUESTED' | 'CONFIRMED')
     },
     "users": {
       [
@@ -166,6 +178,19 @@ Error
 ### Logout
 `DELETE /sessions`
 
-### View RSVPs
+### Create User
+Only admins can create new guests
+
+`POST /user/:id`
+
+<b>params</b>:
+```javascript
+{
+}
+```
+
+### View user groups' RSVPs
+`GET /user_groups`
+
 TODO: aggregated quick stats, sliceable
 
