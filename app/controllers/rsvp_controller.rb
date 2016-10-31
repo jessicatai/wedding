@@ -2,6 +2,9 @@ class RsvpController < ApplicationController
   def show
     code = params[:code]
     @user_group = UserGroup.find_by_code(code)
+
+    ActiveRecord::Base.include_root_in_json = false
+
     respond_to do |format|
       # format.html { render :action => :update }
       format.json {
