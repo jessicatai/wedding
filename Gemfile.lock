@@ -44,6 +44,7 @@ GEM
     pundit (0.2.3)
       activesupport (>= 3.0.0)
     rack (1.2.8)
+    rack-cors (0.4.0)
     rack-mount (0.6.14)
       rack (>= 1.0.0)
     rack-test (0.5.7)
@@ -77,6 +78,7 @@ PLATFORMS
 
 DEPENDENCIES
   pundit
+  rack-cors
   rails (= 3.0.20)
   sqlite3
 
