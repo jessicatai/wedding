@@ -6,10 +6,9 @@ gem 'rails', '3.0.20'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 # gem 'sqlite3'
-gem 'sqlite3', :group => [:development, :test]
+gem 'pg', '~> 0.18.4'
 group :production do
   gem 'thin'
-  gem 'pg'
 end
 gem 'pundit'
 
