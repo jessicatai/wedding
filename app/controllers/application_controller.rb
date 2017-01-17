@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
   before_filter :set_current_user_if_possible
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
-
   protected
 
   attr_reader :current_user

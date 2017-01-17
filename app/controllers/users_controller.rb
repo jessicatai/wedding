@@ -2,8 +2,6 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.xml
   def index
-    @users = User.all
-
     if !@current_user
       Rails.logger.debug("TODO: return not allowed to access, go to home")
       redirect_to :controller => :home
@@ -13,6 +11,8 @@ class UsersController < ApplicationController
       redirect_to :controller => :users, :action => :edit, :id => @current_user.id
       return
     end
+
+    @users = User.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -69,7 +69,6 @@ class UsersController < ApplicationController
   # PUT /users/1.xml
   def update
     @user = User.find(params[:id])
-    authorize @current_user
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
@@ -77,6 +76,7 @@ class UsersController < ApplicationController
         format.xml  { head :ok }
         format.json {render :json => { :users => @user.as_json(:except => [:relationship]) } }
       else
+        Rails.logger.debug("... #{@user.errors}")
         format.html { render :action => "edit" }
         format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
       end
