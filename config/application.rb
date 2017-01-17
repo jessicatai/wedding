@@ -18,6 +18,9 @@ module Wedding
         lib
     ).map { |p| File.join(Rails.root, p) }
 
+    # https://github.com/rails/rails/issues/9619
+    config.relative_url_root = ""
+
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
     # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
