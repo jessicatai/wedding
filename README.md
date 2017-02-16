@@ -98,8 +98,8 @@ curl -H "Content-Type: application/json" -X PUT -d '{
     "code": "TEST",
     "notes": "test notes",
     "lodging_friday": null,
-    "lodging_saturday":'REQUESTED',
-    "lodging_sunday": 'REQUESTED'
+    "lodging_saturday": "REQUESTED",
+    "lodging_sunday": "REQUESTED"
   },
   "users": {
     "1": {

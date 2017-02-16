@@ -74,7 +74,7 @@ class UserGroupsController < ApplicationController
             Rails.logger.error("failed to update user #{user.id}")
           end
         end
-        format.html { render :controller => :rsvp, :action => :show, :code => @user_group.code }
+        # format.html { render :controller => :rsvp, :action => :show, :code => @user_group.code }
         format.json {
           render :json => {
             :user_group => @user_group,
@@ -82,7 +82,7 @@ class UserGroupsController < ApplicationController
           }
         }
       else
-        format.html { redirect_to "/rsvp" }
+        # format.html { redirect_to "/rsvp" }
         format.json { render :json => { :errors => "Oops, we couldn't update your info" } }
       end
     end
