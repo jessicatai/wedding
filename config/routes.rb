@@ -8,6 +8,7 @@ Wedding::Application.routes.draw do
   get "home/registries"
 
   get "rsvp" => "rsvp#index"
+  put "rsvp/:id" => "rsvp#update"
 
   post "rsvp/edit/:code" => "rsvp#show"
   get "rsvp/show" => "rsvp#show"
