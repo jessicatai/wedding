@@ -11,23 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20170222075537) do
-
-  create_table "temp", :id => false, :force => true do |t|
-    t.string  "first_name",    :limit => nil
-    t.string  "last_name",     :limit => nil
-    t.string  "email",         :limit => nil
-    t.string  "family_invite", :limit => nil
-    t.string  "invitation_to", :limit => nil
-    t.string  "address_line1", :limit => nil
-    t.string  "address_line2", :limit => nil
-    t.string  "city",          :limit => nil
-    t.string  "state",         :limit => nil
-    t.string  "zipcode",       :limit => nil
-    t.integer "type"
-    t.integer "tier"
-    t.string  "code",          :limit => nil
-  end
+ActiveRecord::Schema.define(:version => 20170223080923) do
 
   create_table "user_groups", :force => true do |t|
     t.string   "code"
@@ -44,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20170222075537) do
     t.string   "lodging_saturday"
     t.string   "lodging_sunday"
     t.string   "family_invite"
+    t.integer  "vegetarian_count"
   end
 
   create_table "users", :force => true do |t|
@@ -56,7 +41,6 @@ ActiveRecord::Schema.define(:version => 20170222075537) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "role"
-    t.string   "diet"
   end
 
 end
