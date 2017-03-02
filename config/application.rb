@@ -47,7 +47,7 @@ module Wedding
 
     config.middleware.insert_before 0, "Rack::Cors" do
       allow do
-        origins 'http://localhost:3001', 'http://jessicaplusanh.com',  'https://jessicaplusanh.herokuapp.com', 'http://jessicaplusanh.herokuapp.com'
+        origins 'http://localhost:3001', 'http://www.jessicaplusanh.com',  'https://jessicaplusanh.herokuapp.com', 'http://jessicaplusanh.herokuapp.com'
         resource '*', :headers => :any, :methods => [:get, :post, :put, :options]
       end
     end
