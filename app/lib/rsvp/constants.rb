@@ -12,6 +12,7 @@ module Rsvp
       :notes,
       :state,
       :tier,
+      :vegetarian_count,
       :zipcode,
     ]
 
@@ -33,6 +34,7 @@ module Rsvp
       :lodging_sunday,
       :notes,
       :state,
+      :vegetarian_count,
       :zipcode,
     ]
 
