@@ -1,3 +1,6 @@
+<b>Note</b>: This is a hacky set up with lots of bad practices and using the auto Rails generation for a super outdated Rails version :(
+(Hopefully) this is not a good representation of my company-production-level of technical ability.
+
 # Wedding
 
 ## RSVP
