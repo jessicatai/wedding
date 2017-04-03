@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  room_number: MyString
+  num_beds: 1
+  max_occupancy: 1
+  checkin_date: 2017-04-02
+  checkout_date: 2017-04-02
+
+two:
+  room_number: MyString
+  num_beds: 1
+  max_occupancy: 1
+  checkin_date: 2017-04-02
+  checkout_date: 2017-04-02

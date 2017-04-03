@@ -25,6 +25,15 @@ module Rsvp
       :user_group,
     ]
 
+    LODGING_PUBLIC_READ_FIELDS = [
+      :room_type,
+      :room_number,
+      :num_beds,
+      :max_occupancy,
+      :checkin_date,
+      :checkout_date,
+    ]
+
     USER_GROUP_PUBLIC_WRITE_FIELDS = [
       :address_line1,
       :address_line2,
@@ -43,6 +52,9 @@ module Rsvp
       :is_attending,
       :relationship,
       :user_group,
+    ]
+
+    LODGING_PUBLIC_WRITE_FIELDS = [
     ]
   end
 end

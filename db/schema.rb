@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20170223080923) do
+ActiveRecord::Schema.define(:version => 20170403044113) do
+
+  create_table "lodgings", :force => true do |t|
+    t.string   "room_number"
+    t.string   "room_type"
+    t.integer  "num_beds"
+    t.integer  "max_occupancy"
+    t.date     "checkin_date"
+    t.date     "checkout_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "user_groups", :force => true do |t|
     t.string   "code"
@@ -29,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20170223080923) do
     t.string   "lodging_sunday"
     t.string   "family_invite"
     t.integer  "vegetarian_count"
+    t.string   "room_number"
   end
 
   create_table "users", :force => true do |t|
