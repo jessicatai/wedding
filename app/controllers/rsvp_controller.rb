@@ -12,6 +12,10 @@ class RsvpController < ApplicationController
         render :json => {
           :user_group => @user_group.as_json(:only => USER_GROUP_PUBLIC_READ_FIELDS),
           :users => @user_group.users.as_json(:only => USER_PUBLIC_READ_FIELDS),
+          :lodging => Lodging
+            .where(:room_number=> @user_group.room_number)
+            .first
+            .as_json(:only => LODGING_PUBLIC_READ_FIELDS),
         }
       }
     end
@@ -37,6 +41,7 @@ class RsvpController < ApplicationController
       render :json => {
         :user_group => @user_group.as_json(:only => USER_GROUP_PUBLIC_READ_FIELDS),
         :users => @user_group.users.as_json(:only => USER_PUBLIC_READ_FIELDS),
+        :lodging => Lodging.where(:room_number=> @user_group.room_number).as_json,
       }
     else
       render :json => { :errors => "Oops, we couldn't update your info" }
