@@ -7,15 +7,11 @@ class RsvpController < ApplicationController
     ActiveRecord::Base.include_root_in_json = false
 
     respond_to do |format|
-      # format.html { render :action => :update }
       format.json {
         render :json => {
           :user_group => @user_group.as_json(:only => USER_GROUP_PUBLIC_READ_FIELDS),
           :users => @user_group.users.as_json(:only => USER_PUBLIC_READ_FIELDS),
-          :lodging => Lodging
-            .where(:room_number=> @user_group.room_number)
-            .first
-            .as_json(:only => LODGING_PUBLIC_READ_FIELDS),
+          :lodging => lodging_as_json,
         }
       }
     end
@@ -41,10 +37,34 @@ class RsvpController < ApplicationController
       render :json => {
         :user_group => @user_group.as_json(:only => USER_GROUP_PUBLIC_READ_FIELDS),
         :users => @user_group.users.as_json(:only => USER_PUBLIC_READ_FIELDS),
-        :lodging => Lodging.where(:room_number=> @user_group.room_number).as_json,
+        :lodging => Lodging
+          .where(:room_number => @user_group.room_number)
+          .first
+          .as_json(:only => LODGING_PUBLIC_READ_FIELDS),
       }
     else
       render :json => { :errors => "Oops, we couldn't update your info" }
     end
+  end
+
+  private
+  def lodging_as_json
+    return {} if @user_group.room_number.blank?
+
+    lodging_json = Lodging
+      .where(:room_number => @user_group.room_number)
+      .first
+      .as_json(:only => LODGING_PUBLIC_READ_FIELDS)
+
+    if lodging_json.present?
+      lodging_json[:roomies] = roomies_as_json
+    end
+    lodging_json
+  end
+
+  def roomies_as_json
+    roomie_user_group = UserGroup.where(:room_number => @user_group.room_number)
+    user_group_ids = roomie_user_group.map { |group| group.id }
+    User.where(:user_group_id => user_group_ids).as_json(:only => USER_PUBLIC_READ_FIELDS)
   end
 end
