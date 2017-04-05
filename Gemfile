@@ -17,6 +17,10 @@ gem 'rack-cors', :require => 'rack/cors'
 # Use unicorn as the web server
 gem 'unicorn'
 
+# Your Gemfile.lock is corrupt. The following gem is missing from the DEPENDENCIES section: 'activesupport'
+# https://makandracards.com/makandra/43292-bundler-gemfile-lock-is-corrupt-gems-are-missing-from-the-dependencies-section
+gem 'activesupport'
+
 # Deploy with Capistrano
 # gem 'capistrano'
 
