@@ -88,6 +88,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesupport
   pg (~> 0.18.4)
   pundit
   rack-cors
@@ -96,4 +97,4 @@ DEPENDENCIES
   unicorn
 
 BUNDLED WITH
-   1.10.6
+   1.14.6
