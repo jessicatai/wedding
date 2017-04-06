@@ -1,0 +1,50 @@
+room_type,room_number,max_occupancy,num_beds,checkin_date,checkout_date
+Classic King,101,2,1,2017-09-01,2017-09-04
+Classic King,112,2,1,2017-09-01,2017-09-04
+Classic King,114,2,1,2017-09-01,2017-09-04
+Classic King (View),202,2,1,2017-09-02,2017-09-04
+Classic King (View),204,2,1,2017-09-02,2017-09-04
+Classic King (View),209,2,1,,
+Classic King (View),212,2,1,2017-09-01,2017-09-04
+Classic King (View),214,2,1,,
+ADA King (wheelchair friendly),107,2,1,,
+ADA King (wheelchair friendly),207,2,1,,
+King / Double,102,4,2,2017-09-01,2017-09-04
+King / Double,103,4,2,2017-09-01,2017-09-04
+King / Double,104,4,2,2017-09-01,2017-09-04
+King / Double,105,4,2,,
+King / Double,106,4,2,2017-09-02,2017-09-03
+King / Double,109,4,2,2017-09-02,2017-09-03
+King / Double (View),201,4,2,,
+King / Double (View),203,4,2,,
+King / Double (View),205,4,2,2017-09-01,2017-09-04
+King / Double (View),206,4,2,2017-09-02,2017-09-04
+King / Double (View),208,4,2,,
+King / Double (View),215,4,2,,
+King / 2 trundles,108,4,3,2017-09-02,2017-09-04
+King / 2 trundles,110,4,3,2017-09-02,2017-09-04
+King / 2 trundles,111,4,3,2017-09-02,2017-09-04
+King / 2 trundles,115,4,3,2017-09-01,2017-09-03
+King / 2 trundles (View),210,4,3,2017-09-01,2017-09-03
+King / 2 trundles (View),211,4,3,2017-09-01,2017-09-03
+Terrace King,310,2,1,2017-09-01,2017-09-04
+Terrace King + COT,311,2,1,2017-09-01,2017-09-03
+Terrace King,312,2,1,2017-09-01,2017-09-04
+Terrace King,314,2,1,,
+Deluxe Terrace Suite (2bath),303,4,2,2017-09-01,2017-09-03
+Deluxe Terrace Suite (2bath),304,4,2,2017-09-02,2017-09-03
+Deluxe Terrace Suite (2bath),308,4,2,,
+Deluxe Terrace Suite (2bath),307,4,2,,
+"Terrace Suite (1.5 bath, sitting room)",301,2,1,2017-09-02,2017-09-03
+"Terrace Suite (1.5 bath, sitting room)",302,2,1,,
+"Terrace Suite (1.5 bath, sitting room)",305,2,1,,
+"Terrace Suite (1.5 bath, sitting room)",306,2,1,,
+Spa Deluxe Terrace Suite,309,2,1,2017-09-01,2017-09-04
+2 bedroom cabin,1,4,3,,
+2 bedroom cabin,2,4,3,2017-09-01,2017-09-03
+2 bedroom cabin,3,4,3,2017-09-02,2017-09-04
+1 bedroom cabin,4,2,1,,
+1 bedroom cabin,5,2,1,,
+1 bedroom cabin,6,2,1,,
+2 bedroom Villa + COT,VILLA,4,3,2017-09-01,2017-09-04
+3 bedroom Villa,VILLA #51,6,3,2017-09-01,2017-09-04
