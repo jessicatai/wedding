@@ -51,13 +51,17 @@ class RsvpController < ApplicationController
   def lodging_as_json
     return {} if @user_group.room_number.blank?
 
-    lodging_json = Lodging
+    lodging = Lodging
       .where(:room_number => @user_group.room_number)
       .first
-      .as_json(:only => LODGING_PUBLIC_READ_FIELDS)
+    leader_user = lodging.user
+
+    lodging_json = lodging.as_json(:only => LODGING_PUBLIC_READ_FIELDS)
 
     if lodging_json.present?
       lodging_json[:roomies] = roomies_as_json
+      lodging_json[:leader_user] =
+        leader_user.nil? ? {} : leader_user.as_json(:only => USER_PUBLIC_READ_FIELDS)
     end
     lodging_json
   end
