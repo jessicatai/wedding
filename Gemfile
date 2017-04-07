@@ -1,6 +1,8 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.20'
+# To allow rails console to work on heroku dynos
+gem 'rails', '3.2.22'
+gem 'test-unit'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

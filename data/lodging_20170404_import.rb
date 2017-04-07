@@ -13,7 +13,9 @@ PERSON_FIELDS = [
   'Person 6',
 ]
 
-def import_lodging(is_dry_run = true, filename = '/Users/jessica_tai/Downloads/04-04-lodgings.csv')
+LEADER_USER = 'Person 1'
+
+def import_lodging(is_dry_run = true, filename)
   error_count = 0
   csv_text = File.read(filename)
   csv = CSV.parse(csv_text, :headers => true)
@@ -30,6 +32,24 @@ def import_lodging(is_dry_run = true, filename = '/Users/jessica_tai/Downloads/0
     end
   end
   puts "todo: Number of errors in this run: #{error_count}"
+end
+
+def set_leader_user(is_dry_run = true, filename)
+  num_unassigned_rooms = 0
+
+  csv_text = File.read(filename)
+  csv = CSV.parse(csv_text, :headers => true)
+  csv.each do |row|
+    room_number = row['room_number']
+    leader_name = row[LEADER_USER]
+    if leader_name.present?
+      user = get_user(leader_name)
+      assign_leader_to_room(user, room_number, is_dry_run)
+    else
+      num_unassigned_rooms += 1
+    end
+  end
+  puts "Finished with #{num_unassigned_rooms} unassigned rooms."
 end
 
 private
@@ -64,4 +84,18 @@ def get_user(value)
     return
   end
   users.first
+end
+
+def assign_leader_to_room(user, room_number, is_dry_run=true)
+  if user.present?
+    lodging = Lodging.find_by_room_number(room_number)
+    puts "user id #{user.id}"
+    lodging.leader_user_id = user.id
+
+    lodging.save! if !is_dry_run
+
+    puts "Assigned room number #{room_number} to #{user.first_name} #{user.last_name}"
+  else
+    puts "No user for assigned room #{room_number}"
+  end
 end
