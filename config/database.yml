@@ -3,7 +3,7 @@
 # Postgres for heroku
 development:
   adapter: postgresql
-  database: wedding_dev_db
+  database: wedding_pulled_db
   pool: 5
   timeout: 5000
 
